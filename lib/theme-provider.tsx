@@ -50,6 +50,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         "color-success": SchemeColors[colorScheme].success,
         "color-warning": SchemeColors[colorScheme].warning,
         "color-error": SchemeColors[colorScheme].error,
+        "color-calm": (SchemeColors[colorScheme] as any).calm ?? "#A8C5F5",
+        "color-recovery": (SchemeColors[colorScheme] as any).recovery ?? "#7ECBA1",
+        "color-stress": (SchemeColors[colorScheme] as any).stress ?? "#F5A623",
+        "color-tint": (SchemeColors[colorScheme] as any).tint ?? SchemeColors[colorScheme].primary,
       }),
     [colorScheme],
   );
