@@ -9,7 +9,7 @@
     "dev:metro": "cross-env EXPO_USE_METRO_WORKSPACE_ROOT=1 npx expo start --web --port ${EXPO_PORT:-8081}",
     "build": "esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "build:web": "expo export -p web",
-    "export:web": "expo export --platform web --output-dir web-dist",
+    "export:web": "expo export -p web",
     "build:server": "esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "start": "NODE_ENV=production node dist/index.js",
     "start:server": "NODE_ENV=production node dist/index.js",
