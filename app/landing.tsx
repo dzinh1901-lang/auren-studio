@@ -12,17 +12,12 @@ import {
   ChevronRight,
   Menu,
   X,
-  Mail,
   Smartphone,
   Tablet,
   Monitor,
   BookOpen,
   BarChart3,
   MessageSquare,
-  Globe,
-  ExternalLink,
-  AtSign,
-  Link2,
 } from 'lucide-react';
 
 // --- Theme Configuration ---

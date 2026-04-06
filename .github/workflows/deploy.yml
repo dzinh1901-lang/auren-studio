@@ -51,6 +51,8 @@ jobs:
 
       - name: Build web app
         run: pnpm build:web
+        env:
+          EXPO_PUBLIC_BASE_URL: '/auren-studio'
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

@@ -124,6 +124,9 @@ const config: ExpoConfig = {
   experiments: {
     typedRoutes: true,
     reactCompiler: true,
+    // Base URL for GitHub Pages deployment (repo name as subdirectory)
+    // Set EXPO_PUBLIC_BASE_URL=/auren-studio in the build environment for GitHub Pages
+    baseUrl: process.env.EXPO_PUBLIC_BASE_URL || undefined,
   },
 };
 
