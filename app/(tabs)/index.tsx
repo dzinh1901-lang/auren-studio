@@ -196,7 +196,7 @@ export default function HomeScreen() {
         </Pressable>
 
         {/* Metrics Grid */}
-        <Text style={[styles.sectionTitle, { color: colors.foreground }]}>Today's Snapshot</Text>
+        <Text style={[styles.sectionTitle, { color: colors.foreground }]}>Today&apos;s Snapshot</Text>
         <View style={styles.metricsGrid}>
           <MetricCard
             icon="bed.double.fill"
@@ -251,7 +251,7 @@ export default function HomeScreen() {
 
         {/* Mood */}
         <View style={styles.moodRow}>
-          <Text style={[styles.sectionTitle, { color: colors.foreground }]}>Today's Mood</Text>
+          <Text style={[styles.sectionTitle, { color: colors.foreground }]}>Today&apos;s Mood</Text>
           {todayMood ? (
             <View style={[styles.moodBadge, { backgroundColor: colors.surface, borderColor: colors.border }]}>
               <Text style={styles.moodEmoji}>{MOOD_EMOJIS[todayMood.mood]}</Text>
@@ -318,7 +318,7 @@ export default function HomeScreen() {
         <View style={[styles.sleepCard, { backgroundColor: colors.surface, borderColor: colors.border }]}>
           <View style={styles.sleepCardHeader}>
             <IconSymbol name="moon.fill" size={18} color="#5B8DEF" />
-            <Text style={[styles.sleepCardTitle, { color: colors.foreground }]}>Last Night's Sleep</Text>
+            <Text style={[styles.sleepCardTitle, { color: colors.foreground }]}>Last Night&apos;s Sleep</Text>
           </View>
           <View style={styles.sleepStats}>
             <View style={styles.sleepStat}>

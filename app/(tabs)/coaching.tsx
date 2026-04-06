@@ -116,7 +116,7 @@ function CoachingCard({ item, onToggle }: { item: CoachingItem; onToggle: () => 
 
 export default function CoachingScreen() {
   const colors = useColors();
-  const { coachingItems, toggleCoachingItem, todayMetrics, profile } = useHealth();
+  const { coachingItems, toggleCoachingItem, todayMetrics } = useHealth();
 
   const completedCount = coachingItems.filter((i) => i.completed).length;
   const totalCount = coachingItems.length;
@@ -152,7 +152,7 @@ export default function CoachingScreen() {
             {/* Progress Card */}
             <View style={[styles.progressCard, { backgroundColor: colors.primary, shadowColor: colors.primary }]}>
               <View style={styles.progressHeader}>
-                <Text style={styles.progressTitle}>Today's Progress</Text>
+                <Text style={styles.progressTitle}>Today&apos;s Progress</Text>
                 <Text style={styles.progressCount}>
                   {completedCount}/{totalCount}
                 </Text>
@@ -188,7 +188,7 @@ export default function CoachingScreen() {
             )}
 
             <Text style={[styles.sectionLabel, { color: colors.foreground }]}>
-              Today's Recommendations
+              Today&apos;s Recommendations
             </Text>
           </>
         }

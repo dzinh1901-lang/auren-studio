@@ -98,7 +98,7 @@ export default function OnboardingScreen() {
         >
           <View style={styles.setupHeader}>
             <Text style={[styles.setupTitle, { color: colors.foreground }]}>
-              Let's personalize{"\n"}your experience
+              Let&apos;s personalize{"\n"}your experience
             </Text>
             <Text style={[styles.setupSubtitle, { color: colors.muted }]}>
               This helps Vitara give you more relevant insights.
