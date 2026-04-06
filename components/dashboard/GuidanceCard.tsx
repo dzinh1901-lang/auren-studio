@@ -128,7 +128,7 @@ export default function GuidanceCard({ guidance, onRefresh, isRefreshing }: Guid
         }}
         aria-label={`Begin ${guidance.title}`}
       >
-        Begin Session →
+        Begin Session <span aria-hidden="true">→</span>
       </button>
     </section>
   );

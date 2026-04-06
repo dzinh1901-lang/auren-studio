@@ -49,7 +49,7 @@ export default function SleepCard({ sleep }: SleepCardProps) {
           }}
           aria-label={`Trend: ${sleep.trend}`}
         >
-          {TREND_ICONS[sleep.trend]} {sleep.trend}
+          <span aria-hidden="true">{TREND_ICONS[sleep.trend]}</span> {sleep.trend}
         </span>
       </div>
 

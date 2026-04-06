@@ -166,7 +166,7 @@ export default function ReflectionCard() {
               opacity: content.trim().length < MIN_CONTENT_LENGTH ? 0.5 : 1,
             }}
           >
-            Reflect &amp; Analyse
+            Reflect &amp; Analyze
           </button>
         </div>
       </form>

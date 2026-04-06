@@ -78,7 +78,6 @@ export default function WelcomeHero({ userName, insight }: WelcomeHeroProps) {
             color: theme.textSecondary,
             lineHeight: 1.7,
             maxWidth: 560,
-            marginTop: 4,
             margin: 0,
           }}
         >

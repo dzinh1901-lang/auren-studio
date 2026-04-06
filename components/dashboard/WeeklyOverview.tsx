@@ -74,11 +74,14 @@ function SparkLine({
       />
       {/* Last value dot */}
       {(() => {
-        const lastPoint = points[points.length - 1]!.split(',');
+        const lastPoint = points[points.length - 1];
+        if (!lastPoint) return null;
+        const coords = lastPoint.split(',');
+        if (coords.length < 2) return null;
         return (
           <circle
-            cx={parseFloat(lastPoint[0]!)}
-            cy={parseFloat(lastPoint[1]!)}
+            cx={parseFloat(coords[0]!)}
+            cy={parseFloat(coords[1]!)}
             r="3"
             fill={color}
           />

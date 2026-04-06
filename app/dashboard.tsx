@@ -220,7 +220,7 @@ function UnauthenticatedView() {
           Sign in to access your dashboard
         </h1>
         <p style={{ fontSize: 15, color: theme.textSecondary, lineHeight: 1.6 }}>
-          Your personalised wellness journey awaits.
+          Your personalized wellness journey awaits.
         </p>
       </div>
       <a
