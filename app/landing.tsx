@@ -1729,7 +1729,7 @@ const CTA = () => {
             >
               <Sparkles size={18} color="#B8977A" />
               <span style={{ fontSize: 15, fontWeight: 500 }}>
-                {successMessage || "You're on the list! We'll be in touch soon."}
+                {successMessage}
               </span>
             </motion.div>
           ) : (

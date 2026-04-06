@@ -325,7 +325,8 @@ export const appRouter = router({
           // If no database is available, log and return success
           // This allows the form to work in development without a DB
           // Redact email for privacy - only show domain part
-          const emailDomain = input.email.split("@")[1] ?? "unknown";
+          const emailParts = input.email.includes("@") ? input.email.split("@") : ["*", "invalid"];
+          const emailDomain = emailParts[1] ?? "unknown";
           console.log("[Waitlist] Email signup (no DB): ***@" + emailDomain, input.source ?? "");
           return { success: true, message: "You're on the list!" };
         }
