@@ -119,7 +119,7 @@ Today's mood: ${todayMood ? `${todayMood.mood}/5 (${["", "Rough", "Low", "Okay",
         timestamp: Date.now(),
       };
       await addChatMessage(aiMsg);
-    } catch (e) {
+    } catch {
       const errMsg: ChatMessage = {
         id: `msg_${Date.now()}_err`,
         role: "assistant",
