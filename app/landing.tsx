@@ -466,7 +466,7 @@ const Hero = () => {
             style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}
           >
             <motion.a
-              href="#contact"
+              href="/dashboard"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
               style={{
