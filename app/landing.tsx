@@ -12,8 +12,16 @@ import {
   ChevronRight,
   Menu,
   X,
-  Star,
-  Quote,
+  Mail,
+  Smartphone,
+  Tablet,
+  Monitor,
+  BookOpen,
+  BarChart3,
+  MessageSquare,
+  Globe,
+  ExternalLink,
+  AtSign,
 } from 'lucide-react';
 
 // --- Theme Configuration ---
@@ -144,7 +152,7 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navLinks = ['About', 'Pillars', 'Stories', 'Contact'];
+  const navLinks = ['About', 'Ecosystem', 'Pillars', 'Stories'];
 
   return (
     <motion.nav
@@ -196,11 +204,10 @@ const Navigation = () => {
                 fontSize: 24,
                 fontWeight: 600,
                 color: theme.textPrimary,
-                letterSpacing: '-0.02em',
-                fontStyle: 'italic',
+                letterSpacing: '0.12em',
               }}
             >
-              Aurem
+              AUREM
             </span>
           </a>
 
@@ -250,7 +257,7 @@ const Navigation = () => {
               onMouseEnter={(e) => ((e.target as HTMLElement).style.opacity = '0.85')}
               onMouseLeave={(e) => ((e.target as HTMLElement).style.opacity = '1')}
             >
-              Begin Journey <ArrowRight size={14} />
+              Join the Waitlist <ArrowRight size={14} />
             </a>
           </div>
 
@@ -322,7 +329,7 @@ const Navigation = () => {
                     textAlign: 'center',
                   }}
                 >
-                  Begin Journey
+                  Join the Waitlist
                 </a>
               </div>
             </Container>
@@ -335,10 +342,12 @@ const Navigation = () => {
         @media (max-width: 768px) {
           .nav-desktop { display: none !important; }
           .nav-mobile-btn { display: flex !important; }
+          .footer-grid { grid-template-columns: 1fr 1fr !important; }
         }
         @media (max-width: 640px) {
           .pillar-grid { grid-template-columns: 1fr !important; }
           .hero-badge { display: none !important; }
+          .footer-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </motion.nav>
@@ -423,7 +432,7 @@ const Hero = () => {
             }}
           >
             <Sparkles size={13} color={theme.gold} />
-            AI-Powered Holistic Wellness
+            AI-Powered Personal Transformation
             <Sparkles size={13} color={theme.gold} />
           </motion.div>
 
@@ -440,9 +449,9 @@ const Hero = () => {
               maxWidth: 820,
             }}
           >
-            Your journey to{' '}
-            <em style={{ fontStyle: 'italic', color: theme.gold }}>whole</em>
-            {' '}wellness begins here
+            Transform Every Dimension of Your{' '}
+            <em style={{ fontStyle: 'italic', color: theme.gold }}>Life</em>
+            {' '}with AI
           </motion.h1>
 
           {/* Subheadline */}
@@ -452,12 +461,12 @@ const Hero = () => {
               fontSize: 'clamp(16px, 2vw, 19px)',
               lineHeight: 1.75,
               color: theme.textSecondary,
-              maxWidth: 560,
+              maxWidth: 620,
               fontWeight: 400,
             }}
           >
-            Aurem blends ancient wisdom with cutting-edge AI to guide you across six pillars of
-            human flourishing — mind, body, spirit, and beyond.
+            AUREM is your intelligent companion for growth, wellness, purpose, relationships, and 
+            performance—designed to learn your patterns and guide aligned action every day.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -466,7 +475,7 @@ const Hero = () => {
             style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}
           >
             <motion.a
-              href="/dashboard"
+              href="#contact"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
               style={{
@@ -484,10 +493,10 @@ const Hero = () => {
                 boxShadow: '0 8px 24px rgba(75,64,56,0.18)',
               }}
             >
-              Begin Your Journey <ArrowRight size={18} />
+              Join the Waitlist <ArrowRight size={18} />
             </motion.a>
             <motion.a
-              href="#about"
+              href="#ecosystem"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
               style={{
@@ -504,7 +513,7 @@ const Hero = () => {
                 border: `1.5px solid ${theme.accent}`,
               }}
             >
-              Our Philosophy <ChevronRight size={18} />
+              Explore the Ecosystem <ChevronRight size={18} />
             </motion.a>
           </motion.div>
 
@@ -608,7 +617,7 @@ const AboutUs = () => {
                   marginBottom: 16,
                 }}
               >
-                Our Philosophy
+                About Us
               </p>
               <HairlineDivider style={{ width: 48, marginBottom: 24 }} />
               <h2
@@ -621,11 +630,10 @@ const AboutUs = () => {
                   color: theme.textPrimary,
                 }}
               >
-                Nurturing Growth Through{' '}
+                Real transformation is never{' '}
                 <em style={{ fontStyle: 'italic', color: theme.gold }}>
-                  AI-Powered
-                </em>{' '}
-                Wellness Journeys
+                  one-dimensional
+                </em>
               </h2>
             </motion.div>
 
@@ -638,21 +646,20 @@ const AboutUs = () => {
                 fontWeight: 400,
               }}
             >
-              We blend ancient wisdom with{' '}
+              We believe real transformation is never one-dimensional. AUREM is designed to support the{' '}
               <strong style={{ color: theme.textPrimary, fontWeight: 600 }}>
-                cutting-edge technology
-              </strong>{' '}
-              to support your journey to holistic well-being. Our approach fosters a serene
-              environment where mind, body, and spirit unite, allowing for personal transformation
-              that respects your unique path. Experience nurturing guidance designed to elevate
-              your wellness journey.
+                whole person
+              </strong>
+              —mind, body, spirit, emotions, relationships, and ambition—through personalized intelligence 
+              and beautifully structured action. Our philosophy combines holistic transformation through AI, 
+              self-awareness, structure, and reflection.
             </motion.p>
 
             <motion.div variants={fadeUp} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               {[
-                { icon: Brain, label: 'Personalized AI guidance tailored to your unique path' },
-                { icon: Heart, label: 'Holistic approach across all dimensions of well-being' },
-                { icon: Sun, label: 'Rooted in ancient wisdom, powered by modern science' },
+                { icon: Brain, label: 'AI that learns your habits, strengths, and motivations over time' },
+                { icon: Heart, label: 'Holistic support across mind, body, spirit, and relationships' },
+                { icon: Sun, label: 'Adaptive guidance that meets you exactly where you are' },
               ].map(({ icon: Icon, label }, i) => (
                 <div
                   key={i}
@@ -835,29 +842,56 @@ const AboutUs = () => {
   );
 };
 
-// --- Feature Showcase ---
+// --- Product Ecosystem Showcase ---
 const Showcase = () => {
-  const features = [
+  const ecosystemItems = [
     {
-      number: '01',
-      title: 'Intelligent Daily Check-Ins',
-      desc: 'Your AI companion meets you where you are each day — reading your energy, mood, and context to offer guidance that actually fits your life in that moment.',
+      icon: Smartphone,
+      title: 'Mobile App',
+      desc: 'Your AI companion in your pocket—daily check-ins, guided reflections, and habit tracking.',
+      color: '#9B8FD4',
     },
     {
-      number: '02',
-      title: 'Adaptive Wellness Plans',
-      desc: 'Unlike rigid programs, Aurem evolves with you. Your plan reshapes itself as your life, goals, and growth shift — ensuring perpetual forward momentum.',
+      icon: Tablet,
+      title: 'Tablet Dashboard',
+      desc: 'Immersive wellness sessions and detailed analytics on a larger canvas.',
+      color: '#C9A96E',
     },
     {
-      number: '03',
-      title: 'Deep Reflection & Journaling',
-      desc: 'Guided prompts and intelligent journaling tools help you surface patterns, celebrate growth, and process challenges with greater clarity and compassion.',
+      icon: Monitor,
+      title: 'Desktop Web App',
+      desc: 'Full-featured workspace for deep planning, journaling, and performance analysis.',
+      color: '#6BA896',
+    },
+    {
+      icon: MessageSquare,
+      title: 'AI Coaching Cards',
+      desc: 'Personalized guidance delivered at the right moment to support your growth.',
+      color: '#E07B7B',
+    },
+    {
+      icon: Activity,
+      title: 'Habit & Wellness Tracking',
+      desc: 'Seamless tracking of routines, energy, mood, and physical vitality metrics.',
+      color: '#7EA8C4',
+    },
+    {
+      icon: BookOpen,
+      title: 'Reflection & Journaling',
+      desc: 'Intelligent prompts and guided journaling to surface patterns and insights.',
+      color: '#A89B6E',
+    },
+    {
+      icon: BarChart3,
+      title: 'Performance Analytics',
+      desc: 'Visualize your growth across all six pillars with beautiful, insightful dashboards.',
+      color: '#8B7FC4',
     },
   ];
 
   return (
     <Section
-      id="showcase"
+      id="ecosystem"
       style={{ background: theme.bg, padding: '100px 0' }}
     >
       <Container>
@@ -882,7 +916,7 @@ const Showcase = () => {
                 marginBottom: 16,
               }}
             >
-              How It Works
+              The AUREM Ecosystem
             </p>
             <h2
               className="font-serif"
@@ -892,117 +926,236 @@ const Showcase = () => {
                 lineHeight: 1.15,
                 letterSpacing: '-0.025em',
                 color: theme.textPrimary,
-                maxWidth: 600,
-                margin: '0 auto',
+                maxWidth: 640,
+                margin: '0 auto 20px',
               }}
             >
-              Wellness that{' '}
-              <em style={{ fontStyle: 'italic', color: theme.gold }}>learns</em>{' '}
-              and grows with you
+              A complete{' '}
+              <em style={{ fontStyle: 'italic', color: theme.gold }}>ecosystem</em>{' '}
+              for transformation
             </h2>
+            <p
+              style={{
+                fontSize: 17,
+                color: theme.textSecondary,
+                maxWidth: 560,
+                margin: '0 auto',
+                lineHeight: 1.7,
+              }}
+            >
+              AUREM meets you wherever you are—mobile, tablet, or desktop—with intelligent 
+              tools designed to support every dimension of your growth.
+            </p>
           </motion.div>
 
-          {/* Feature list */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-            {features.map((feat, i) => (
+          {/* Ecosystem visual grid */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: 20,
+            }}
+          >
+            {ecosystemItems.map(({ icon: Icon, title, desc, color }, i) => (
               <motion.div
                 key={i}
                 variants={fadeUp}
-                whileHover={{ x: 6 }}
+                whileHover={{ y: -6, boxShadow: '0 20px 48px rgba(75,64,56,0.1)' }}
                 transition={{ type: 'spring', stiffness: 200 }}
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: '80px 1fr',
-                  gap: 40,
-                  padding: '40px 48px',
-                  background: i % 2 === 0 ? theme.card : theme.surface,
+                  background: theme.card,
                   borderRadius: 20,
+                  padding: '28px 24px',
                   border: `1px solid ${theme.border}`,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 16,
                   cursor: 'default',
-                  alignItems: 'center',
+                  position: 'relative',
+                  overflow: 'hidden',
                 }}
               >
-                <span
-                  className="font-serif"
+                {/* Decorative gradient orb */}
+                <div
                   style={{
-                    fontSize: 48,
-                    fontWeight: 300,
-                    color: theme.accent,
-                    lineHeight: 1,
-                    fontStyle: 'italic',
+                    position: 'absolute',
+                    top: -30,
+                    right: -30,
+                    width: 100,
+                    height: 100,
+                    borderRadius: '50%',
+                    background: `radial-gradient(circle, ${color}15 0%, transparent 70%)`,
+                    pointerEvents: 'none',
+                  }}
+                />
+                <div
+                  style={{
+                    width: 48,
+                    height: 48,
+                    borderRadius: 12,
+                    background: `${color}15`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: `1px solid ${color}30`,
                   }}
                 >
-                  {feat.number}
-                </span>
+                  <Icon size={22} color={color} strokeWidth={1.5} />
+                </div>
                 <div>
                   <h3
                     style={{
-                      fontSize: 20,
+                      fontSize: 16,
                       fontWeight: 600,
                       color: theme.textPrimary,
-                      marginBottom: 10,
+                      marginBottom: 8,
                       letterSpacing: '-0.01em',
                     }}
                   >
-                    {feat.title}
+                    {title}
                   </h3>
                   <p
                     style={{
-                      fontSize: 15,
+                      fontSize: 14,
                       color: theme.textSecondary,
-                      lineHeight: 1.75,
-                      maxWidth: 580,
+                      lineHeight: 1.65,
                     }}
                   >
-                    {feat.desc}
+                    {desc}
                   </p>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Lifestyle mood section */}
+          <motion.div
+            variants={fadeUp}
+            style={{
+              marginTop: 64,
+              background: `linear-gradient(135deg, ${theme.surface} 0%, ${theme.card} 100%)`,
+              borderRadius: 28,
+              padding: 'clamp(40px, 6vw, 72px)',
+              border: `1px solid ${theme.border}`,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center',
+              position: 'relative',
+              overflow: 'hidden',
+            }}
+          >
+            {/* Decorative elements */}
+            <div
+              style={{
+                position: 'absolute',
+                top: -60,
+                left: -60,
+                width: 200,
+                height: 200,
+                borderRadius: '50%',
+                background: `radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%)`,
+                pointerEvents: 'none',
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                bottom: -40,
+                right: -40,
+                width: 160,
+                height: 160,
+                borderRadius: '50%',
+                background: `radial-gradient(circle, rgba(184,164,138,0.1) 0%, transparent 70%)`,
+                pointerEvents: 'none',
+              }}
+            />
+
+            <div
+              style={{
+                width: 80,
+                height: 80,
+                borderRadius: '50%',
+                background: `linear-gradient(135deg, ${theme.gold}, ${theme.accentDark})`,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 28,
+                boxShadow: '0 12px 40px rgba(201,169,110,0.25)',
+              }}
+            >
+              <Sparkles size={32} color="#fff" />
+            </div>
+
+            <p
+              className="font-serif"
+              style={{
+                fontSize: 'clamp(20px, 3vw, 28px)',
+                fontStyle: 'italic',
+                color: theme.textSecondary,
+                maxWidth: 600,
+                lineHeight: 1.6,
+                marginBottom: 24,
+              }}
+            >
+              &ldquo;Designed for stillness, clarity, and intentional living—
+              where technology becomes invisible and transformation becomes effortless.&rdquo;
+            </p>
+
+            <p
+              style={{
+                fontSize: 13,
+                color: theme.textMuted,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+              }}
+            >
+              The AUREM Philosophy
+            </p>
+          </motion.div>
         </motion.div>
       </Container>
     </Section>
   );
 };
 
-// --- Six Pillars Section ---
+// --- Six Pillars / What We Do Section ---
 const Pillars = () => {
   const pillarsData = [
     {
       title: 'Personal Mastery',
       icon: Brain,
-      desc: 'Clarify identity, goals, habits, and standards for absolute self-leadership.',
+      desc: 'Clarify your identity, goals, habits, and standards for absolute self-leadership and intentional living.',
       color: '#9B8FD4',
     },
     {
       title: 'Spiritual Alignment',
       icon: Sun,
-      desc: 'Support mindfulness, reflection, stillness, purpose, and values-based living.',
+      desc: 'Cultivate mindfulness, reflection, stillness, purpose, and values-based living for deeper meaning.',
       color: '#C9A96E',
     },
     {
       title: 'Emotional Resilience',
       icon: Heart,
-      desc: 'Develop emotional awareness, self-regulation, inner stability, and healthier responses.',
+      desc: 'Develop emotional awareness, self-regulation, inner stability, and healthier responses to life.',
       color: '#E07B7B',
     },
     {
       title: 'Physical Vitality',
       icon: Activity,
-      desc: 'Improve energy, movement, recovery, sleep, nutrition, and overall wellness.',
+      desc: 'Optimize energy, movement, recovery, sleep, nutrition, and overall physical wellness.',
       color: '#6BA896',
     },
     {
       title: 'Relationship Intelligence',
       icon: Users,
-      desc: 'Strengthen communication, empathy, trust, and relational dynamics in every area.',
+      desc: 'Strengthen communication, empathy, trust, and relational dynamics in every area of life.',
       color: '#7EA8C4',
     },
     {
       title: 'Business Performance',
       icon: TrendingUp,
-      desc: 'Execute on goals, build discipline, manage priorities, and accelerate measurable growth.',
+      desc: 'Execute on goals, build discipline, manage priorities, and accelerate measurable professional growth.',
       color: '#A89B6E',
     },
   ];
@@ -1037,7 +1190,7 @@ const Pillars = () => {
                 marginBottom: 16,
               }}
             >
-              The Six Pillars
+              What We Do
             </p>
             <h2
               className="font-serif"
@@ -1051,20 +1204,20 @@ const Pillars = () => {
                 margin: '0 auto 20px',
               }}
             >
-              Every dimension of your{' '}
-              <em style={{ fontStyle: 'italic', color: theme.gold }}>flourishing</em>
+              Six dimensions of{' '}
+              <em style={{ fontStyle: 'italic', color: theme.gold }}>transformation</em>
             </h2>
             <p
               style={{
                 fontSize: 17,
                 color: theme.textSecondary,
-                maxWidth: 520,
+                maxWidth: 560,
                 margin: '0 auto',
                 lineHeight: 1.7,
               }}
             >
-              Aurem addresses the full spectrum of human well-being, ensuring no part of you goes
-              unsupported on the path to your best self.
+              AUREM provides adaptive AI support across every dimension of human flourishing, 
+              ensuring no part of you goes unsupported on the path to becoming your best self.
             </p>
           </motion.div>
 
@@ -1130,7 +1283,8 @@ const Pillars = () => {
                     {desc}
                   </p>
                 </div>
-                <div
+                <motion.div
+                  whileHover={{ x: 4 }}
                   style={{
                     marginTop: 'auto',
                     display: 'flex',
@@ -1139,10 +1293,11 @@ const Pillars = () => {
                     color: color,
                     fontSize: 13,
                     fontWeight: 600,
+                    cursor: 'pointer',
                   }}
                 >
-                  Explore <ChevronRight size={14} />
-                </div>
+                  Learn more <ChevronRight size={14} />
+                </motion.div>
               </motion.div>
             ))}
           </div>
@@ -1152,29 +1307,26 @@ const Pillars = () => {
   );
 };
 
-// --- Client Success / Testimonials ---
+// --- Client Success / Founding Member Stories ---
 const ClientSuccess = () => {
-  const testimonials = [
+  const storyCards = [
     {
-      quote:
-        "Aurem didn't just give me tools — it gave me a mirror. For the first time I could see myself clearly and act from a place of intention rather than reaction.",
-      name: 'Mara S.',
-      role: 'Entrepreneur & Mother',
-      rating: 5,
+      title: 'The Overwhelmed Executive',
+      vision: 'Transform reactive chaos into intentional leadership through AI-guided daily alignment and energy management.',
+      pillar: 'Business Performance',
+      color: '#A89B6E',
     },
     {
-      quote:
-        "I've tried countless wellness apps. Aurem is the first one that felt like it truly understood me. The AI guidance is uncanny — deeply human.",
-      name: 'James R.',
-      role: 'Executive Coach',
-      rating: 5,
+      title: 'The Seeking Parent',
+      vision: 'Balance personal growth with family presence using adaptive routines that honor both ambition and connection.',
+      pillar: 'Relationship Intelligence',
+      color: '#7EA8C4',
     },
     {
-      quote:
-        "The six pillars framework changed how I see my life. I used to optimize one area and neglect others. Now everything moves together.",
-      name: 'Priya K.',
-      role: 'Physician & Wellness Advocate',
-      rating: 5,
+      title: 'The Wellness Seeker',
+      vision: 'Move beyond fragmented health apps to holistic vitality—mind, body, and spirit working in harmony.',
+      pillar: 'Physical Vitality',
+      color: '#6BA896',
     },
   ];
 
@@ -1205,7 +1357,7 @@ const ClientSuccess = () => {
                 marginBottom: 16,
               }}
             >
-              Client Stories
+              Designed for Transformation
             </p>
             <h2
               className="font-serif"
@@ -1215,25 +1367,37 @@ const ClientSuccess = () => {
                 lineHeight: 1.15,
                 letterSpacing: '-0.025em',
                 color: theme.textPrimary,
-                maxWidth: 560,
-                margin: '0 auto',
+                maxWidth: 600,
+                margin: '0 auto 20px',
               }}
             >
-              Lives{' '}
-              <em style={{ fontStyle: 'italic', color: theme.gold }}>transformed</em>{' '}
-              by Aurem
+              Stories we&apos;re{' '}
+              <em style={{ fontStyle: 'italic', color: theme.gold }}>building</em>{' '}
+              for
             </h2>
+            <p
+              style={{
+                fontSize: 16,
+                color: theme.textSecondary,
+                maxWidth: 480,
+                margin: '0 auto',
+                lineHeight: 1.7,
+              }}
+            >
+              AUREM is designed for real people navigating complex lives. These founding member 
+              archetypes represent the transformation journeys we&apos;re building to support.
+            </p>
           </motion.div>
 
-          {/* Testimonial cards */}
+          {/* Story cards */}
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
               gap: 24,
             }}
           >
-            {testimonials.map((t, i) => (
+            {storyCards.map((story, i) => (
               <motion.div
                 key={i}
                 variants={fadeUp}
@@ -1250,57 +1414,143 @@ const ClientSuccess = () => {
                   overflow: 'hidden',
                 }}
               >
-                {/* Decorative quote mark */}
-                <Quote
-                  size={40}
-                  color={theme.accent}
-                  style={{ position: 'absolute', top: 20, right: 20, opacity: 0.4 }}
+                {/* Decorative gradient orb */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: -20,
+                    right: -20,
+                    width: 100,
+                    height: 100,
+                    borderRadius: '50%',
+                    background: `radial-gradient(circle, ${story.color}15 0%, transparent 70%)`,
+                    pointerEvents: 'none',
+                  }}
                 />
 
-                {/* Stars */}
-                <div style={{ display: 'flex', gap: 4 }}>
-                  {Array.from({ length: t.rating }).map((_, si) => (
-                    <Star
-                      key={si}
-                      size={14}
-                      color={theme.gold}
-                      fill={theme.gold}
-                    />
-                  ))}
+                {/* Pillar badge */}
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 6,
+                    padding: '6px 12px',
+                    borderRadius: 100,
+                    background: `${story.color}15`,
+                    border: `1px solid ${story.color}30`,
+                    color: story.color,
+                    fontSize: 11,
+                    fontWeight: 600,
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase',
+                    width: 'fit-content',
+                  }}
+                >
+                  {story.pillar}
                 </div>
+
+                <h3
+                  className="font-serif"
+                  style={{
+                    fontSize: 22,
+                    fontWeight: 500,
+                    color: theme.textPrimary,
+                    fontStyle: 'italic',
+                    letterSpacing: '-0.01em',
+                  }}
+                >
+                  {story.title}
+                </h3>
 
                 <p
                   style={{
                     fontSize: 15,
                     color: theme.textSecondary,
-                    lineHeight: 1.8,
-                    fontStyle: 'italic',
-                    fontFamily: 'Newsreader, serif',
+                    lineHeight: 1.75,
                   }}
                 >
-                  &ldquo;{t.quote}&rdquo;
+                  {story.vision}
                 </p>
 
                 <div style={{ marginTop: 'auto' }}>
                   <HairlineDivider style={{ marginBottom: 16 }} />
-                  <div style={{ fontWeight: 600, color: theme.textPrimary, fontSize: 14 }}>
-                    {t.name}
-                  </div>
-                  <div style={{ fontSize: 13, color: theme.textMuted, marginTop: 2 }}>
-                    {t.role}
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 8,
+                      fontSize: 12,
+                      color: theme.textMuted,
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    <Sparkles size={12} color={theme.gold} />
+                    Founding member pilot story
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Founding member CTA */}
+          <motion.div
+            variants={fadeUp}
+            style={{
+              marginTop: 48,
+              textAlign: 'center',
+            }}
+          >
+            <p
+              style={{
+                fontSize: 15,
+                color: theme.textSecondary,
+                marginBottom: 20,
+              }}
+            >
+              Want to be part of our founding member cohort?
+            </p>
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                padding: '14px 28px',
+                borderRadius: 100,
+                background: 'transparent',
+                color: theme.textPrimary,
+                fontSize: 15,
+                fontWeight: 600,
+                textDecoration: 'none',
+                border: `1.5px solid ${theme.accent}`,
+              }}
+            >
+              Apply for Early Access <ArrowRight size={16} />
+            </motion.a>
+          </motion.div>
         </motion.div>
       </Container>
     </Section>
   );
 };
 
-// --- CTA Section ---
+// --- CTA Section with Email Form ---
 const CTA = () => {
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  // Placeholder form handler - swap endpoint later
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: Replace with actual API endpoint
+    // Example: await fetch('/api/waitlist', { method: 'POST', body: JSON.stringify({ email }) });
+    console.log('Waitlist signup:', email);
+    setSubmitted(true);
+    setEmail('');
+  };
+
   return (
     <Section
       id="contact"
@@ -1366,8 +1616,8 @@ const CTA = () => {
               marginBottom: 20,
             }}
           >
-            Ready to become your{' '}
-            <em style={{ fontStyle: 'italic', color: theme.gold }}>best self?</em>
+            Begin Your{' '}
+            <em style={{ fontStyle: 'italic', color: theme.gold }}>AUREM</em> Journey
           </motion.h2>
 
           <motion.p
@@ -1375,66 +1625,120 @@ const CTA = () => {
             style={{
               fontSize: 18,
               color: 'rgba(247,242,235,0.65)',
-              maxWidth: 480,
+              maxWidth: 520,
               margin: '0 auto 40px',
               lineHeight: 1.7,
             }}
           >
-            Join thousands discovering a more intentional, vibrant, and fulfilling life through
-            Aurem&apos;s holistic approach.
+            Join the waitlist for early access to a new kind of AI-guided transformation experience.
           </motion.p>
 
-          <motion.div
+          {submitted ? (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              style={{
+                padding: '20px 32px',
+                background: `rgba(201,169,110,0.15)`,
+                borderRadius: 16,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 12,
+                color: theme.bg,
+              }}
+            >
+              <Sparkles size={20} color={theme.gold} />
+              <span style={{ fontSize: 16, fontWeight: 500 }}>
+                You&apos;re on the list! We&apos;ll be in touch soon.
+              </span>
+            </motion.div>
+          ) : (
+            <motion.form
+              variants={fadeUp}
+              onSubmit={handleSubmit}
+              style={{
+                display: 'flex',
+                gap: 12,
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+                maxWidth: 500,
+                margin: '0 auto',
+              }}
+            >
+              <div
+                style={{
+                  position: 'relative',
+                  flex: '1 1 280px',
+                  minWidth: 200,
+                }}
+              >
+                <Mail
+                  size={18}
+                  color="rgba(247,242,235,0.4)"
+                  style={{
+                    position: 'absolute',
+                    left: 18,
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    pointerEvents: 'none',
+                  }}
+                />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  style={{
+                    width: '100%',
+                    padding: '18px 18px 18px 50px',
+                    borderRadius: 100,
+                    border: '1.5px solid rgba(247,242,235,0.2)',
+                    background: 'rgba(247,242,235,0.05)',
+                    color: theme.bg,
+                    fontSize: 16,
+                    outline: 'none',
+                    transition: 'border-color 0.2s',
+                  }}
+                  onFocus={(e) => (e.target.style.borderColor = 'rgba(201,169,110,0.5)')}
+                  onBlur={(e) => (e.target.style.borderColor = 'rgba(247,242,235,0.2)')}
+                />
+              </div>
+              <motion.button
+                type="submit"
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '18px 32px',
+                  borderRadius: 100,
+                  background: theme.gold,
+                  color: theme.textPrimary,
+                  fontSize: 16,
+                  fontWeight: 700,
+                  border: 'none',
+                  cursor: 'pointer',
+                  letterSpacing: '0.01em',
+                  boxShadow: '0 8px 32px rgba(201,169,110,0.35)',
+                }}
+              >
+                Join the Waitlist <ArrowRight size={18} />
+              </motion.button>
+            </motion.form>
+          )}
+
+          <motion.p
             variants={fadeUp}
             style={{
-              display: 'flex',
-              gap: 14,
-              justifyContent: 'center',
-              flexWrap: 'wrap',
+              fontSize: 13,
+              color: 'rgba(247,242,235,0.4)',
+              marginTop: 24,
             }}
           >
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 8,
-                padding: '18px 40px',
-                borderRadius: 100,
-                background: theme.gold,
-                color: theme.textPrimary,
-                fontSize: 16,
-                fontWeight: 700,
-                textDecoration: 'none',
-                letterSpacing: '0.01em',
-                boxShadow: '0 8px 32px rgba(201,169,110,0.35)',
-              }}
-            >
-              Start for Free <ArrowRight size={18} />
-            </motion.a>
-            <motion.a
-              href="#about"
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 8,
-                padding: '18px 40px',
-                borderRadius: 100,
-                background: 'transparent',
-                color: 'rgba(247,242,235,0.75)',
-                fontSize: 16,
-                fontWeight: 500,
-                textDecoration: 'none',
-                border: '1.5px solid rgba(247,242,235,0.2)',
-              }}
-            >
-              Learn More
-            </motion.a>
-          </motion.div>
+            No spam, ever. Unsubscribe anytime.
+          </motion.p>
         </motion.div>
       </Container>
     </Section>
@@ -1444,9 +1748,9 @@ const CTA = () => {
 // --- Footer ---
 const Footer = () => {
   const links = {
-    Product: ['Features', 'Pricing', 'Changelog', 'Roadmap'],
-    Company: ['About', 'Blog', 'Careers', 'Press'],
-    Support: ['Help Center', 'Community', 'Privacy', 'Terms'],
+    Explore: ['About', 'Ecosystem', 'Pillars', 'Stories'],
+    Legal: ['Privacy Policy', 'Terms of Service'],
+    Connect: ['Instagram', 'Twitter', 'LinkedIn'],
   };
 
   return (
@@ -1459,6 +1763,7 @@ const Footer = () => {
     >
       <Container>
         <div
+          className="footer-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: '2fr 1fr 1fr 1fr',
@@ -1488,11 +1793,10 @@ const Footer = () => {
                   fontSize: 22,
                   fontWeight: 600,
                   color: theme.bg,
-                  fontStyle: 'italic',
-                  letterSpacing: '-0.02em',
+                  letterSpacing: '0.1em',
                 }}
               >
-                Aurem
+                AUREM
               </span>
             </div>
             <p
@@ -1500,12 +1804,62 @@ const Footer = () => {
                 fontSize: 14,
                 lineHeight: 1.8,
                 color: 'rgba(247,242,235,0.5)',
-                maxWidth: 260,
+                maxWidth: 280,
               }}
             >
-              Ancient wisdom meets cutting-edge AI — your companion on the journey to whole
-              wellness.
+              Your intelligent companion for growth, wellness, purpose, relationships, and 
+              performance—designed to guide aligned action every day.
             </p>
+            <a
+              href="mailto:hello@aurem.ai"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                color: theme.gold,
+                textDecoration: 'none',
+                fontSize: 14,
+                fontWeight: 500,
+              }}
+            >
+              <Mail size={14} />
+              hello@aurem.ai
+            </a>
+            {/* Social icons */}
+            <div style={{ display: 'flex', gap: 12, marginTop: 8 }}>
+              {[
+                { icon: Globe, href: '#', label: 'Website' },
+                { icon: AtSign, href: '#', label: 'Social' },
+                { icon: ExternalLink, href: '#', label: 'External' },
+              ].map(({ icon: Icon, href, label }, i) => (
+                <a
+                  key={i}
+                  href={href}
+                  style={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: 10,
+                    background: 'rgba(247,242,235,0.08)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'rgba(247,242,235,0.5)',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.target as HTMLElement).style.background = 'rgba(201,169,110,0.2)';
+                    (e.target as HTMLElement).style.color = theme.gold;
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.target as HTMLElement).style.background = 'rgba(247,242,235,0.08)';
+                    (e.target as HTMLElement).style.color = 'rgba(247,242,235,0.5)';
+                  }}
+                >
+                  <Icon size={16} />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Link columns */}
@@ -1526,7 +1880,12 @@ const Footer = () => {
               {items.map((item) => (
                 <a
                   key={item}
-                  href="#"
+                  href={
+                    item === 'Privacy Policy' ? '#privacy' :
+                    item === 'Terms of Service' ? '#terms' :
+                    item === 'Instagram' || item === 'Twitter' || item === 'LinkedIn' ? '#' :
+                    `#${item.toLowerCase()}`
+                  }
                   style={{
                     color: 'rgba(247,242,235,0.55)',
                     textDecoration: 'none',
@@ -1560,10 +1919,10 @@ const Footer = () => {
           }}
         >
           <p style={{ fontSize: 13 }}>
-            © {new Date().getFullYear()} Aurem. All rights reserved.
+            © {new Date().getFullYear()} AUREM. All rights reserved.
           </p>
           <p style={{ fontSize: 13 }}>
-            Crafted with <span style={{ color: theme.gold }}>♥</span> for human flourishing
+            Designed for <span style={{ color: theme.gold }}>transformation</span>
           </p>
         </div>
       </Container>
